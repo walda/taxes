@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxes>
+    <products tax="0" importationTax="5">
+        <product>BOOK</product>
+        <product>CHOCOLATE</product>
+        <product>HEADACHE_PILLS</product>
+    </products>
+    <products tax="10" importationTax="5">
+        <product>CD</product>
+        <product>PERFUME</product>
+    </products>
+</taxes>
