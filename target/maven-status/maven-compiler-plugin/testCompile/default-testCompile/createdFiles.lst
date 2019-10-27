@@ -7,3 +7,4 @@ com\lastminute\taxes\engine\TaxesServiceTest.class
 com\lastminute\taxes\exception\UnparseableTokenExceptionTest.class
 com\lastminute\taxes\TaxesApplicationTests.class
 com\lastminute\taxes\calculator\CalculatorServiceTest.class
+com\lastminute\taxes\TaxesApplicationIT.class
