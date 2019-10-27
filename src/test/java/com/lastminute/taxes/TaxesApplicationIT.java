@@ -1,7 +1,7 @@
 package com.lastminute.taxes;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.ByteArrayInputStream;
@@ -19,7 +19,7 @@ public class TaxesApplicationIT {
     private final static String TEST3 = "1 IMPORTED PERFUME 27.99\n1 PERFUME 18.99\n1 HEADACHE_PILLS 9.75\n1 IMPORTED CHOCOLATE 11.25\n";
     private final static String INVALID_INPUT = "a PERFUME 27.21";
 
-    @BeforeEach
+    @Before
     public void init() {
         Locale.setDefault(new Locale("es", "ES"));
     }
