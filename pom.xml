@@ -62,7 +62,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>sale-taxes</finalName>
+		<finalName>sales-taxes</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -87,7 +87,7 @@
 				<configuration>
 					<images>
 						<image>
-							<name>sale-taxes:1.0</name>
+							<name>sales-taxes:1.0</name>
 							<build>
 								<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 							</build>

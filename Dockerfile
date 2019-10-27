@@ -1,3 +1,3 @@
 FROM openjdk:11
-ADD target/sale-taxes.jar /app/sale-taxes.jar
-ENTRYPOINT ["java", "-jar", "/app/sale-taxes.jar"]
+ADD target/sales-taxes.jar /app/sales-taxes.jar
+ENTRYPOINT ["java", "-jar", "/app/sales-taxes.jar"]
