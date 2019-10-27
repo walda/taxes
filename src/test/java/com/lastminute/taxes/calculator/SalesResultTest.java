@@ -21,14 +21,14 @@ public class SalesResultTest {
                                 new ProductTaxes("name2", 3.0, 4.0)), 2.15)
                 ),0.2, 3.2).toString();
 
-        assertThat(toString)
+        assertThat(toString.replace("\r\n", "\n"))
             .isNotNull()
             .isEqualTo("1 name: 1,05\n1 IMPORTED name2: 2,15\nSales Taxes: 0,20\nTotal: 3,20\n");
     }
 
     @Test
     public void when_toString_Empty_SalesResult() {
-        assertThat(new SalesResult().toString())
+        assertThat(new SalesResult().toString().replace("\r\n", "\n"))
                 .isNotNull()
                 .isEqualTo("Sales Taxes: 0,00\nTotal: 0,00\n");
     }

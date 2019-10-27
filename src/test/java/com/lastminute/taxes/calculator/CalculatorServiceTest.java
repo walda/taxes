@@ -4,6 +4,7 @@ import com.lastminute.taxes.engine.ProductTaxes;
 import com.lastminute.taxes.engine.TaxesService;
 import com.lastminute.taxes.tokenizer.Product;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.math3.util.Precision;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -100,7 +100,7 @@ public class CalculatorServiceTest {
 
         assertThat(salesResult).isNotNull();
         assertThat(salesResult.getCalculatedProductBills().get(0).getRight()).isEqualTo(1.3);
-        assertThat(new DecimalFormat("#.##").format(salesResult.getSalesTaxes())).isEqualTo("0,3");
+        assertThat(Precision.round(salesResult.getSalesTaxes(), 2)).isEqualTo(0.3);
         assertThat(salesResult.getTotal()).isEqualTo(1.3);
 
         verify(taxesService).getProductTaxes("name");
