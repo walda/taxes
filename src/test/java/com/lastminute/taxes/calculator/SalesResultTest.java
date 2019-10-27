@@ -3,13 +3,21 @@ package com.lastminute.taxes.calculator;
 import com.lastminute.taxes.engine.ProductTaxes;
 import com.lastminute.taxes.tokenizer.Product;
 import org.apache.commons.lang3.tuple.Pair;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.text.NumberFormat;
 import java.util.Arrays;
+import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SalesResultTest {
+
+    @BeforeEach
+    public void init() {
+        Locale.setDefault(new Locale("es", "ES"));
+    }
 
     @Test
     public void when_toString() {

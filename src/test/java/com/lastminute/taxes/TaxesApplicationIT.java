@@ -1,11 +1,13 @@
 package com.lastminute.taxes;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,6 +18,11 @@ public class TaxesApplicationIT {
     private final static String TEST2 = "1 IMPORTED CHOCOLATE 10.00\n1 IMPORTED PERFUME 47.50\n";
     private final static String TEST3 = "1 IMPORTED PERFUME 27.99\n1 PERFUME 18.99\n1 HEADACHE_PILLS 9.75\n1 IMPORTED CHOCOLATE 11.25\n";
     private final static String INVALID_INPUT = "a PERFUME 27.21";
+
+    @BeforeEach
+    public void init() {
+        Locale.setDefault(new Locale("es", "ES"));
+    }
 
     @Test
     public void execute_Taxes_For_Example_1() {
